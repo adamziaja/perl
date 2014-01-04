@@ -5,9 +5,12 @@
 # (C) 2014 Adam Ziaja <adam@adamziaja.com> http://adamziaja.com
 
 use v5.10;
+
 use strict;
 use warnings;
-use Set::CrossProduct;    # cpan[1]> install Set::CrossProduct
+
+use Set::CrossProduct;    # cpan> install Set::CrossProduct
+
 use LWP::UserAgent;
 my $ua = LWP::UserAgent->new;
 
@@ -16,12 +19,16 @@ if ( $#ARGV < 2 ) {
     print "perl $0 http://google.com 2 8\n";
     exit 1;
 }
+
 my $target = $ARGV[0];
+
 my $min    = $ARGV[1];    # min 2
 if ( $min < 2 ) {
     $min = 2;
 }
+
 my $max = $ARGV[2];
+
 my $set = [qw( a b c d e f g h i j k l m n o p q r s t u v w x y z )];
 
 foreach my $length ( $min .. $max ) {
