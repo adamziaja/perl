@@ -32,7 +32,7 @@ my $res = $ua->post(
 if ( $res->is_success ) {
     my $content = $res->content;
     if ( $content =~ /nie\ poprawne\ dane\ logowania/i ) {
-        print "Nie poprawne dane \"$ARGV[0]\":\"$ARGV[1]\"!\n";
+        print "Niepoprawne dane \"$ARGV[0]\":\"$ARGV[1]\"!\n";
     }
 }
 else {
