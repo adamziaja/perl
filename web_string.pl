@@ -55,7 +55,7 @@ foreach ( keys %$entries ) {
     if ( $res->is_success ) {
         my $content = $res->content;
         if ( $content =~ /$ARGV[1]/i ) {
-            print "Znazazłem ciąg znaków "
+            print "Znalazłem ciąg znaków "
                 . $ARGV[1] . " na "
                 . $res->request->url . "\n";
         }
