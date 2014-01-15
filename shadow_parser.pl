@@ -4,7 +4,7 @@
 # /etc/shadow parser
 # (C) 2014 Adam Ziaja <adam@adamziaja.com> http://adamziaja.com
 
-# perl stdin.pl < /etc/shadow
+# perl shadow_parser.pl < /etc/shadow
 # user:root algorithm:SHA-512 salt:X hashed:X
 # user:adam algorithm:SHA-512 salt:X hashed:X
 
