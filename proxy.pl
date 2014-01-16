@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 # vim:ft=perl
 
-# downloading web pages through a proxy server
+# downloading web pages through a http proxy server
 # (C) 2014 Adam Ziaja <adam@adamziaja.com> http://adamziaja.com
 
 use strict;
