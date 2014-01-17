@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 # vim:ft=perl
 
-# Wyszukiwanie danego ciągu znaków na stronach internetowych w danej klasie CIDR
+# wyszukiwanie danego ciągu znaków na stronach internetowych w danej klasie CIDR
 # (C) 2014 Adam Ziaja <adam@adamziaja.com> http://adamziaja.com
 
 use strict;
