@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 # vim:ft=perl
 
-# Logowanie na GG
+# logowanie na GG
 # (C) 2014 Adam Ziaja <adam@adamziaja.com> http://adamziaja.com
 
 use strict;
