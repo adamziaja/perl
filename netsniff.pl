@@ -4,7 +4,7 @@
 # parsing PhantomJS netsniff.js results for malicious software
 # (C) 2014 Adam Ziaja <adam@adamziaja.com> http://adamziaja.com
 
-# $ phantomjs netsniff.js http://adamziaja.com | perl phantomjs.pl
+# $ phantomjs netsniff.js http://adamziaja.com | perl netsniff.pl
 # 200 text/html http://adamziaja.com/
 # http://adamziaja.com/ Scan request successfully queued, come back later for the report
 # https://www.virustotal.com/url/77221285f45f3223d076dfe097669599daba4f9a86ab0a713be438236c4650b5/analysis/1391223729/
