@@ -15,7 +15,7 @@ use Term::ANSIColor qw(:constants);
 $Term::ANSIColor::AUTORESET = 1;
 
 my $user_agent = rand_ua('windows');
-my $mech       = WWW::Mechanize->new();
+my $mech       = WWW::Mechanize->new( autocheck => 0 );
 $mech->agent($user_agent);
 $mech->ssl_opts( verify_hostname => 0 );
 
