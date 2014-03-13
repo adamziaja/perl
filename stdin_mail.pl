@@ -1,8 +1,13 @@
 #!/usr/bin/perl
 # vim:ft=perl
 
-# STDIN e-mail
+# stdin e-mail
 # (C) 2014 Adam Ziaja <adam@adamziaja.com> http://adamziaja.com
+
+# stdin is not empty so e-mail will be sent:
+# echo -e "test1 test2 test3\ntest4 test5 test6" | perl stdin_mail.pl
+# stdin is empty so e-mail will not be sent:
+# touch test && cat test | perl stdin_mail.pl
 
 use strict;
 use warnings;
