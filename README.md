@@ -1,1 +1,1 @@
-simple perl 5 scripts
+simple perl5 scripts
