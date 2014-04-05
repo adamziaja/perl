@@ -4,8 +4,10 @@
 # (C) 2014 Adam Ziaja <adam@adamziaja.com> http://adamziaja.com
 
 =comment
-Changes the list of domains to the list of IP (supports CNAME).
-~1000 domains / ~15 sec
+changes the list of domains to the list of IPv4
+- supports CNAME
+- ignore private network and localhost
+- ~1000 domains / ~15 sec
 
 $ cat hosts.txt 
 www.google.com
@@ -57,6 +59,14 @@ use warnings;
 use Net::DNS::Async;
 my $dns = new Net::DNS::Async( QueueSize => 500, Retries => 2 );
 
+use NetAddr::IP;
+
+my $inv  = NetAddr::IP->new('0.0.0.0/8');
+my $pn_a = NetAddr::IP->new('10.0.0.0/8');
+my $pn_b = NetAddr::IP->new('172.16.0.0/12');
+my $pn_c = NetAddr::IP->new('192.168.0.0/16');
+my $lh   = NetAddr::IP->new('127.0.0.0/8');
+
 foreach (@ARGV) {
     open my $input, $_ or die "Could not open $_: $!";
 
@@ -71,7 +81,17 @@ foreach (@ARGV) {
         if ($res) {
             foreach ( $res->answer ) {
                 next unless $_->type eq 'A'; # this also works well with CNAME
-                print join( ' ', ( $_->name, $_->address . "\n" ) );
+
+                my $ip = NetAddr::IP->new( $_->address );
+
+                if (   !$ip->within($inv)
+                    && !$ip->within($pn_a)
+                    && !$ip->within($pn_b)
+                    && !$ip->within($pn_c)
+                    && !$ip->within($lh) )
+                {
+                    print join( ' ', ( $_->name, $_->address . "\n" ) );
+                }
             }
         }
     }
