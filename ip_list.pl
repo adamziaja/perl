@@ -8,7 +8,6 @@
 Changes the list of domains to the list of IP (supports CNAME).
 ~1000 domains / ~15 sec
 
-
 $ cat hosts.txt 
 www.google.com
 www.yahoo.com
@@ -42,7 +41,7 @@ ds-any-fp3-real.wa1.b.yahoo.com has IPv6 address 2001:4998:f00b:1fe::3001
 www.bing.com is an alias for any.edge.bing.com.
 any.edge.bing.com has address 204.79.197.200
 
-$ perl ip_list.pl hosts.txt | awk '{print $2}'
+$ perl ip_list.pl hosts.txt | awk "{print $2}"
 204.79.197.200
 46.228.47.114
 46.228.47.115
