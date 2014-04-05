@@ -4,7 +4,6 @@
 # (C) 2014 Adam Ziaja <adam@adamziaja.com> http://adamziaja.com
 
 '''
-
 Changes the list of domains to the list of IP (supports CNAME).
 ~1000 domains / ~15 sec
 
@@ -50,7 +49,6 @@ $ perl ip_list.pl hosts.txt | awk "{print $2}"
 173.194.113.20
 173.194.113.18
 173.194.113.16
-
 '''
 
 use strict;
