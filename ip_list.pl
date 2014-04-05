@@ -5,7 +5,7 @@
 
 =comment
 changes the list of domains to the list of IPv4
-- supports CNAME
+- supports CNAME and round robin DNS
 - ignore private network and localhost
 - ~1000 domains / ~15 sec
 
