@@ -14,6 +14,6 @@ my @devices  = $pcsensor->list_devices();
   
 foreach my $device ( @devices )
 {
-  print 'internal ' . $device->internal()->celsius() . " \n";
+  print 'internal ' . $device->internal()->celsius() . "\n";
   print 'external ' . $device->external()->celsius() . "\n";
 }
