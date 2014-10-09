@@ -12,7 +12,7 @@ use Time::Seconds;
 #use Term::ANSIColor qw(:constants);
 #$Term::ANSIColor::AUTORESET = 1;
 
-my @logs = </ugm/log/*>;
+my @logs = </var/log/*>;
 foreach my $log (@logs) {
     my $mtime = ( stat($log) )[9]; # http://stackoverflow.com/a/509666
     my $time = Time::Seconds->new( time - $mtime );
