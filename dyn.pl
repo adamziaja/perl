@@ -8,9 +8,8 @@ use strict;
 use warnings;
 
 #use Data::Dumper;
-
+#use MIME::QuotedPrint::Perl; # quoted-printable
 use Net::IMAP::Simple;
-
 use WWW::Mechanize;
 
 my $imap = Net::IMAP::Simple->new(
@@ -33,6 +32,7 @@ foreach (@ids) {
     if ( !$imap->seen($_) ) {
         my $content = $imap->get($_);
         $content = "$content";
+        #$content = decode_qp($content); # quoted-printable
         if ( $content =~ /Subject: Your free Dyn hostname will expire/ ) {
             if ( $content =~ m/(https:\/\/account.dyn.com(.*))/g ) {
                 my $url = $1;
