@@ -4,6 +4,8 @@
 # web crawler to search faulty links
 # (C) 2014 Adam Ziaja <adam@adamziaja.com> http://adamziaja.com
 
+# sudo apt-get update && sudo apt install -y cpanminus && sudo cpanm WWW::Mechanize && sudo cpanm WWW::UserAgent::Random
+
 use strict;
 use warnings;
 use diagnostics;
